@@ -1,0 +1,51 @@
+﻿/* Estilos personalizados */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #1f60a7; /* Color azul para la barra de navegación */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+footer {
+    background-color: #1f60a7;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+    .card:hover {
+        transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+    }
+
+.text-secondary {
+    font-size: 0.9rem;
+}
+
+.text-white-50 {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Ajustes para la imagen circular pequeña */
+.small-image {
+    width: 50px; /* Ajusta el tamaño de la imagen */
+    height: 50px; /* Asegura que la imagen sea un círculo */
+    object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+    display: block; /* Elimina el espacio extra alrededor de la imagen */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%; /* Asegura que la imagen sea un círculo */
+}
+
+.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
