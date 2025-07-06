@@ -1,0 +1,34 @@
+﻿@page
+@model RegisterConfirmationModel
+
+@{
+    ViewData["Title"] = "Confirmar Registro";
+}
+
+
+<link rel="stylesheet" href="~/css/ConfRegistro.css" />
+
+<!-- Título de la página -->
+<h1 class="text-center text-primary">@ViewData["Title"]</h1>
+
+<!-- Contenido principal -->
+<div class="text-center mt-4">
+    @if (@Model.DisplayConfirmAccountLink)
+    {
+        <!-- Si se debe mostrar el enlace de confirmación -->
+        <p>
+            ¡Casi listo! Haz clic en el siguiente botón para confirmar tu cuenta y empezar a disfrutar de todos nuestros servicios.
+        </p>
+        <a id="confirm-link" href="/home/index" class="btn btn-success btn-lg">
+            Confirmar Registro
+        </a>
+
+    }
+    else
+    {
+        <!-- Si ya se envió el correo de confirmación -->
+        <p>
+            Revisa tu correo electrónico para confirmar tu cuenta. ¡Estamos emocionados de tenerte con nosotros!
+        </p>
+    }
+</div>

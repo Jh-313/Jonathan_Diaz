@@ -1,0 +1,85 @@
+﻿/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black !important; /* Fondo oscuro al estilo Spotify */
+    color: #E5E5E5; /* Texto claro */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: blanchedalmond; /* Verde Spotify */
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Main Content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.mt-4 {
+    margin-top: 30px;
+}
+
+/* Button Styling */
+.btn {
+    background-color: teal; /* Botón verde como en Spotify */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        background-color: steelblue; /* Un tono más claro de verde para el hover */
+    }
+
+/* Confirm Message */
+p {
+    font-size: 1.1rem;
+    color: #E5E5E5;
+    max-width: 500px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Confirmation Link Styling */
+#confirm-link {
+    text-decoration: none;
+}
+
+    #confirm-link:active {
+        transform: scale(0.98);
+    }
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}

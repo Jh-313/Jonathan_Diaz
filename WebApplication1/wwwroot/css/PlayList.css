@@ -1,0 +1,99 @@
+﻿namespace WebApplication1.wwwroot.css {
+    /* General Styles */
+    body
+
+{
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Fondo oscuro similar a Spotify */
+    color: #E5E5E5; /* Texto claro */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del contenedor principal */
+.container-fluid {
+    background-color: #121212;
+}
+
+h2, h3 {
+    color: #1DB954; /* Verde de Spotify */
+}
+
+/* Estilos para la información de la playlist */
+.playlist-info {
+    text-align: center;
+}
+
+.playlist-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Estilos de las canciones en la lista */
+.song-list {
+    margin-top: 30px;
+}
+
+.song-item {
+    border-bottom: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+.song-info {
+    color: #E5E5E5;
+}
+
+.song-item:hover {
+    background-color: #333;
+}
+
+.song-item button {
+    background-color: #1DB954;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+    .song-item button:hover {
+        background-color: #1ED760;
+    }
+
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+    .playlist-info {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .playlist-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .song-item {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+        .song-item button {
+            font-size: 0.9rem;
+            padding: 4px 8px;
+        }
+}
+
+}

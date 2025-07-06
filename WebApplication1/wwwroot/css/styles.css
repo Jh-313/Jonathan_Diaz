@@ -1,6 +1,7 @@
 ﻿/* Estilos personalizados */
 body {
     font-family: 'Arial', sans-serif;
+
 }
 
 .navbar {
@@ -12,7 +13,7 @@ body {
 }
 
 footer {
-    background-color: #1f60a7;
+    background-color: #1f60a7; /*Azul*/
 }
 
 .card {
