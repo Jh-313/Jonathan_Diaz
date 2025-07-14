@@ -1,142 +1,275 @@
-﻿{layaut =null;}
-
+﻿@{
+    Layout = null;
+}
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Melodix</title>
+   
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- CSS personalizado -->
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </head>
+<body>
 
-<body class="bg-dark text-white">
-    <!-- Barra de navegación superior -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-4">
-        <a class="navbar-brand fw-bold" href="#">Melodix</a>
-        <div class="ms-auto">
-            <button class="btn btn-light me-2">Regístrate</button>
-            <button class="btn btn-outline-light">Iniciar sesión</button>
-        </div>
-    </nav>
+    <div class="d-flex flex-column min-vh-100">
 
-    <!-- Buscador -->
-    <div class="container mt-4">
-        <input type="text" class="form-control bg-dark text-white border-secondary" placeholder="¿Qué quieres reproducir?">
-    </div>
-
-    <!-- Contenedor principal -->
-    <div class="container-fluid mt-4">
-        <div class="row">
-            <!-- Menú lateral -->
-            <div class="col-md-3 col-lg-2 bg-black p-3">
-                <h6 class="text-secondary">Tu biblioteca</h6>
-                <button class="btn btn-outline-light w-100 mb-3">Crear playlist</button>
-                <div class="text-white-50">Busquemos algunos artistas para seguir</div>
+        <!-- 🔹 TopBar Superior -->
+        <div class="topbar d-flex justify-content-between align-items-center p-3 bg-black text-white">
+           
+            <div class="d-flex align-items-center gap-3">
+                <a href="#"><img src="~/imagenes/Logo/Melodix.png" alt="Melodix" style="width: 50px;"></a>
+                <a href="#" class="text-white fs-5"><i class="fa-solid fa-house"></i></a>
             </div>
 
-            <!-- Contenido principal -->
-            <div class="col-md-9 col-lg-10">
-                <h4 class="fw-bold mb-3">Canciones del momento</h4>
-                <div class="d-flex flex-wrap gap-3">
-                    <!-- Ejemplo de tarjeta de canción -->
-                    <div class="card bg-dark text-white" style="width: 150px;">
-                        <img src="/imagenes/yoytuBeele.png" class="card-img-top" alt="Portada canción">
-                        <div class="card-body p-2">
-                            <p class="card-title mb-0">Yo y Tú</p>
-                            <small>Ovy On The Drums, Quevedo & Beéle</small>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white" style="width: 150px;">
-                        <img src="/imagenes/Arcangel.jpg" class="card-img-top" alt="Portada canción">
-                        <div class="card-body p-2">
-                            <p class="card-title mb-0">Mi peor momento</p>
-                            <small>Arcángel</small>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white" style="width: 150px;">
-                        <img src="/imagenes/Univercidad.jpg" class="card-img-top" alt="Portada canción">
-                        <div class="card-body p-2">
-                            <p class="card-title mb-0">Universidad</p>
-                            <small>TINI, Beéle</small>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white" style="width: 150px;">
-                        <img src="/imagenes/MovimientoCaderas.jpg" class="card-img-top" alt="Portada canción">
-                        <div class="card-body p-2">
-                            <p class="card-title mb-0">Movimiento de Caderas</p>
-                            <small>Rayo & Toby</small>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white" style="width: 150px;">
-                        <img src="/imagenes/laCulpaTrack.jpg" class="card-img-top" alt="Portada canción">
-                        <div class="card-body p-2">
-                            <p class="card-title mb-0">La culpa (track11)</p>
-                            <small>Alleh,Yorghaki</small>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-white" style="width: 150px;">
-                        <img src="/imagenes/TuVasSin.jpg" class="card-img-top" alt="Portada canción">
-                        <div class="card-body p-2">
-                            <p class="card-title mb-0">Tu vas sin (Fav)</p>
-                            <small>Rels B</small>
-                        </div>
-                    </div>
-                    <!-- Repetir tarjetas con diferente contenido si se desea -->
-                </div>
-                <h4 class="fw-bold mt-5 mb-3">Artistas populares</h4>
-                <div class="d-flex flex-nowrap overflow-auto gap-3">
-                    <!-- Artista popular -->
-                    <div class="text-center">
-                        <img src="/imagenes/Batbuni.jpg" class="rounded-circle img-fluid w-50" alt="Artista"> 
-                        <p class="mt-2">Bad Bunny</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="/imagenes/Batbuni.jpg" class="rounded-circle img-fluid w-50" alt="Artista">
-                        <p class="mt-2">Bad Bunny</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="/imagenes/Batbuni.jpg" class="rounded-circle img-fluid w-50" alt="Artista">
-                        <p class="mt-2">Bad Bunny</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="/imagenes/Batbuni.jpg" class="rounded-circle img-fluid w-50" alt="Artista">
-                        <p class="mt-2">Bad Bunny</p>
-                    </div>
-                     <div class="text-center">
-                        <img src="/imagenes/Batbuni.jpg" class="rounded-circle img-fluid w-50" alt="Artista"> 
-                        <p class="mt-2">Bad Bunny</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="/imagenes/Batbuni.jpg" class="rounded-circle img-fluid w-50" alt="Artista">
-                        <p class="mt-2">Bad Bunny</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="/imagenes/Batbuni.jpg" class="rounded-circle img-fluid w-50" alt="Artista">
-                        <p class="mt-2">Bad Bunny</p>
+           
+            <div class="input-group" style="width: 300px;">
+                <span class="input-group-text bg-secondary border-0 text-white">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="text" class="form-control bg-dark border-0 text-white" placeholder="¿Qué quieres reproducir?">
+            </div>
+
+            
+            <div class="d-flex align-items-center gap-3">
+                <a href="#" class="btn text-white fw-bold">Regístrate</a>
+                <a href="#" class="btn btn-light fw-bold rounded-pill px-4">Iniciar sesión</a>
+            </div>
+        </div>
+
+       
+        <div class="d-flex flex-grow-1">
+
+          
+            <div class="sidebar bg-black text-white p-4 d-flex flex-column justify-content-between" style="width: 260px;">
+                <div>
+                    <h5 class="fw-bold">Tu biblioteca</h5>
+                    <button class="btn btn-outline-light btn-sm rounded-pill mt-3">Crear playlist</button>
+
+                    <div class="mt-4">
+                        <p class="small text-muted">Busquemos algunos podcasts para seguir</p>
                     </div>
                 </div>
+
+                <div>
+                    <div class="mt-4">
+                        <a href="#" class="d-block text-secondary small">Legal</a>
+                        <a href="#" class="d-block text-secondary small">Privacidad</a>
+                        <a href="#" class="d-block text-secondary small">Cookies</a>
+                    </div>
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill mt-3">
+                        <i class="fa-solid fa-globe"></i> Español
+                    </button>
+                </div>
+            </div>
+
+            <div class="main-content bg-dark text-white p-4 flex-grow-1 overflow-auto scrollbar-invisible">
+                <h4 class="fw-bold mb-4">Canciones del momento</h4>
+                <div class="d-flex flex-nowrap overflow-auto scrollbar-invisible gap-3">
+                    <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                        <img src="~/imagenes/yoytuBeele.png" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                        <div class="p-2">
+                            <h6 class="fw-bold mb-0">YO y TÚ</h6>
+                            <p class="small text-secondary mb-0">Ovy On The Drums,Quevedo, Beéle</p>
+                        </div>
+                    </div>
+                    <!-- Repetir el bloque anterior para más canciones -->
+                    <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                        <img src="~/imagenes/CancionesDelMomento/Ba Ba Bad Remix.jpg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                        <div class="p-2">
+                            <h6 class="fw-bold mb-0">Vamo a Bailotear</h6>
+                            <p class="small text-secondary mb-0">Kybba, Sean Paul, Ryan Castro,Busy Signal</p>
+                        </div>
+                    </div>
+                    <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                        <img src="~/imagenes/CancionesDelMomento/Papasito.jpg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                        <div class="p-2">
+                            <h6 class="fw-bold mb-0">Vamo a Bailotear</h6>
+                            <p class="small text-secondary mb-0">KAROL G</p>
+                        </div>
+                    </div>
+                    <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                        <img src="~/imagenes/CancionesDelMomento/las de la Intuición.jpg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                        <div class="p-2">
+                            <h6 class="fw-bold mb-0">Vamo a Bailotear</h6>
+                            <p class="small text-secondary mb-0">Shakira</p>
+                        </div>
+                    </div>
+                    <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                        <img src="~/imagenes/CancionesDelMomento/dejaria todo.jpg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                        <div class="p-2">
+                            <h6 class="fw-bold mb-0">Vamo a Bailotear</h6>
+                            <p class="small text-secondary mb-0">Chayanne</p>
+                        </div>
+                    </div>
+                    <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                        <img src="~/imagenes/CancionesDelMomento/tal vez.jpg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                        <div class="p-2">
+                            <h6 class="fw-bold mb-0">Vamo a Bailotear</h6>
+                            <p class="small text-secondary mb-0">Paulo Londra</p>
+                        </div>
+                    </div>
+                    <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                        <img src="~/imagenes/CancionesDelMomento/Vamos Bailotear.png" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                        <div class="p-2">
+                            <h6 class="fw-bold mb-0">Vamo a Bailotear</h6>
+                            <p class="small text-secondary mb-0">Cris MJ</p>
+                        </div>
+                    </div>
+                   
+                </div>
+                <!--Artistas Populares -->
+                <h4 class="fw-bold mt-5 mb-4">Artistas populares</h4>
+                <div class="d-flex flex-nowrap overflow-auto scrollbar-invisible gap-4">
+                    <div class="text-center" style="width: 150px; min-width: 150px;">
+                        <img src="~/imagenes/Batbuni.jpg" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Bad Bunny">
+                        <div class="mt-2">
+                            <h6 class="fw-bold mb-0">Bad Bunny</h6>
+                            <p class="small text-secondary mb-0">Artista</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center" style="width: 150px; min-width: 150px;">
+                        <img src="~/imagenes/DonOmar.jpg" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Don Omar">
+                        <div class="mt-2">
+                            <h6 class="fw-bold mb-0">Don Omar</h6>
+                            <p class="small text-secondary mb-0">Artista</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center" style="width: 150px; min-width: 150px;">
+                        <img src="~/imagenes/jombriel.jpg" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Jombriel">
+                        <div class="mt-2">
+                            <h6 class="fw-bold mb-0">Jombriel</h6>
+                            <p class="small text-secondary mb-0">Artista</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center" style="width: 150px; min-width: 150px;">
+                        <img src="~/imagenes/feid.jpg" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Feid">
+                        <div class="mt-2">
+                            <h6 class="fw-bold mb-0">Feid</h6>
+                            <p class="small text-secondary mb-0">Artista</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center" style="width: 150px; min-width: 150px;">
+                        <img src="~/imagenes/Arcangel.jpg" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Arcangel">
+                        <div class="mt-2">
+                            <h6 class="fw-bold mb-0">Arcangel</h6>
+                            <p class="small text-secondary mb-0">Artista</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center" style="width: 150px; min-width: 150px;">
+                        <img src="~/imagenes/MielSanMarcos.jpg" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Miel San Marcos">
+                        <div class="mt-2">
+                            <h6 class="fw-bold mb-0">Miel San Marcos</h6>
+                            <p class="small text-secondary mb-0">Artista</p>
+                        </div>
+                    </div>
+                    <div class="text-center" style="width: 150px; min-width: 150px;">
+                        <img src="~/imagenes/rawAlejandro.jpg" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Don Omar">
+                        <div class="mt-2">
+                            <h6 class="fw-bold mb-0">Raw Alejandro</h6>
+                            <p class="small text-secondary mb-0">Artista</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center" style="width: 150px; min-width: 150px;">
+                        <img src="~/imagenes/w sound.jpg" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Don Omar">
+                        <div class="mt-2">
+                            <h6 class="fw-bold mb-0">W Sound</h6>
+                            <p class="small text-secondary mb-0">Artista</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--Albunes Populares -->
+
+                <div class="main-content bg-dark text-white p-4 flex-grow-1 overflow-auto scrollbar-invisible">
+                    <h4 class="fw-bold mb-4">Álbumes populares</h4>
+                    <div class="d-flex flex-nowrap overflow-auto scrollbar-invisible gap-3">
+                        <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                            <img src="~/imagenes/yoytuBeele.png" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                            <div class="p-2">
+                                <h6 class="fw-bold mb-0">YO y TÚ</h6>
+                                <p class="small text-secondary mb-0">Ovy On The Drums,Quevedo, Beéle</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                @* estaciones populares *@
+
+                <div class="main-content bg-dark text-white p-4 flex-grow-1 overflow-auto scrollbar-invisible">
+                    <h4 class="fw-bold mb-4">Estaciones populares</h4>
+                    
                 
 
-                    <!-- Repetir más artistas -->
-                </div>
+
+                   <div class="d-flex flex-nowrap overflow-auto scrollbar-invisible gap-3">
+                       <div style="background-color: #b5b3ff; border-radius: 20px; width: 280px; height: 280px; position: relative; font-family: sans-serif; flex: 0 0 auto;">
+                           <img src="~/imagenes/Logo/Melodix.png" alt="Logo" style="position: absolute; top: 12px; left: 12px; width: 28px; height: 28px;">
+                           <span style="position: absolute; top: 12px; right: 12px; font-weight: bold; font-size: 14px;">RADIO</span>
+                         <div style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 100%; display: flex; align-items: center; justify-content: center;">
+                            <img src="~/imagenes/feid.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; left: 40px; top: 20px; z-index: 1;">
+                            <img src="~/imagenes/Arcangel.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; position: relative; z-index: 2;">
+                            <img src="~/imagenes/JBalvin.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; right: 40px; top: 20px; z-index: 1;">
+                        </div>
+                        <div class="p-2" style="position: absolute; bottom: 10px; width: 100%; text-align: center;">
+                            <h6 class="fw-bold mb-0">YO y TÚ</h6>
+                            <p class="small text-secondary mb-0">Ovy On The Drums, Quevedo, Beéle</p>
+                        </div>
+                       </div>
+
+                        <div style="background-color: #b5b3ff; border-radius: 20px; width: 280px; height: 280px; position: relative; font-family: sans-serif; flex: 0 0 auto;">
+                            <img src="~/imagenes/Logo/Melodix.png" alt="Logo" style="position: absolute; top: 12px; left: 12px; width: 28px; height: 28px;">
+                            <span style="position: absolute; top: 12px; right: 12px; font-weight: bold; font-size: 14px;">RADIO</span>
+                            <div style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 100%; display: flex; align-items: center; justify-content: center;">
+                                <img src="~/imagenes/feid.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; left: 40px; top: 20px; z-index: 1;">
+                                <img src="~/imagenes/Arcangel.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; position: relative; z-index: 2;">
+                                <img src="~/imagenes/JBalvin.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; right: 40px; top: 20px; z-index: 1;">
+                            </div>
+                            <div class="p-2" style="position: absolute; bottom: 10px; width: 100%; text-align: center;">
+                                <h6 class="fw-bold mb-0">YO y TÚ</h6>
+                                <p class="small text-secondary mb-0">Ovy On The Drums, Quevedo, Beéle</p>
+                            </div>
+                        </div>
+
+                        <div style="background-color: #b5b3ff; border-radius: 20px; width: 280px; height: 280px; position: relative; font-family: sans-serif; flex: 0 0 auto;">
+                            <img src="~/imagenes/Logo/Melodix.png" alt="Logo" style="position: absolute; top: 12px; left: 12px; width: 28px; height: 28px;">
+                            <span style="position: absolute; top: 12px; right: 12px; font-weight: bold; font-size: 14px;">RADIO</span>
+                            <div style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 100%; display: flex; align-items: center; justify-content: center;">
+                                <img src="~/imagenes/feid.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; left: 40px; top: 20px; z-index: 1;">
+                                <img src="~/imagenes/Arcangel.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; position: relative; z-index: 2;">
+                                <img src="~/imagenes/JBalvin.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; right: 40px; top: 20px; z-index: 1;">
+                            </div>
+                            <div class="p-2" style="position: absolute; bottom: 10px; width: 100%; text-align: center;">
+                                <h6 class="fw-bold mb-0">YO y TÚ</h6>
+                                <p class="small text-secondary mb-0">Ovy On The Drums, Quevedo, Beéle</p>
+                            </div>
+                        </div>
+					</div>
+				</div>
+
 
             </div>
+
+
         </div>
     </div>
 
-  
-    <footer class="bg-primary text-white text-center p-3 mt-4">
-        <small>Muestra de Melodix - Regístrate para acceder a canciones ilimitados sin anuncios. No necesitas tarjeta de crédito.</small>
-    </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
