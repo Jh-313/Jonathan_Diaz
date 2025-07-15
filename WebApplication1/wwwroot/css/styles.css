@@ -90,3 +90,20 @@
     cursor: pointer;
 }
 
+<style >
+@media (max-width: 576px) {
+    .container-fluid .d-flex
+
+{
+    flex-direction: column;
+    text-align: center;
+}
+
+.container-fluid button {
+    margin-top: 10px;
+}
+
+}
+</style >
+
+

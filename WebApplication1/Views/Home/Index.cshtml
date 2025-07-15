@@ -38,8 +38,9 @@
 
             
             <div class="d-flex align-items-center gap-3">
-                <a href="#" class="btn text-white fw-bold">Regístrate</a>
-                <a href="#" class="btn btn-light fw-bold rounded-pill px-4">Iniciar sesión</a>
+                <a class="btn text-white fw-bold" asp-area="Identity" asp-page="/Account/Register">Regístrate</a>
+
+                <a class="btn btn-light fw-bold rounded-pill px-4" asp-area="Identity" asp-page="/Account/Login">Iniciar sesión</a>
             </div>
         </div>
 
@@ -212,61 +213,85 @@
                 @* estaciones populares *@
 
                 <div class="main-content bg-dark text-white p-4 flex-grow-1 overflow-auto scrollbar-invisible">
-                    <h4 class="fw-bold mb-4">Estaciones populares</h4>
-                    
-                
-
-
-                   <div class="d-flex flex-nowrap overflow-auto scrollbar-invisible gap-3">
-                       <div style="background-color: #b5b3ff; border-radius: 20px; width: 280px; height: 280px; position: relative; font-family: sans-serif; flex: 0 0 auto;">
-                           <img src="~/imagenes/Logo/Melodix.png" alt="Logo" style="position: absolute; top: 12px; left: 12px; width: 28px; height: 28px;">
-                           <span style="position: absolute; top: 12px; right: 12px; font-weight: bold; font-size: 14px;">RADIO</span>
-                         <div style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 100%; display: flex; align-items: center; justify-content: center;">
-                            <img src="~/imagenes/feid.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; left: 40px; top: 20px; z-index: 1;">
-                            <img src="~/imagenes/Arcangel.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; position: relative; z-index: 2;">
-                            <img src="~/imagenes/JBalvin.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; right: 40px; top: 20px; z-index: 1;">
-                        </div>
-                        <div class="p-2" style="position: absolute; bottom: 10px; width: 100%; text-align: center;">
-                            <h6 class="fw-bold mb-0">YO y TÚ</h6>
-                            <p class="small text-secondary mb-0">Ovy On The Drums, Quevedo, Beéle</p>
-                        </div>
-                       </div>
-
-                        <div style="background-color: #b5b3ff; border-radius: 20px; width: 280px; height: 280px; position: relative; font-family: sans-serif; flex: 0 0 auto;">
-                            <img src="~/imagenes/Logo/Melodix.png" alt="Logo" style="position: absolute; top: 12px; left: 12px; width: 28px; height: 28px;">
-                            <span style="position: absolute; top: 12px; right: 12px; font-weight: bold; font-size: 14px;">RADIO</span>
-                            <div style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 100%; display: flex; align-items: center; justify-content: center;">
-                                <img src="~/imagenes/feid.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; left: 40px; top: 20px; z-index: 1;">
-                                <img src="~/imagenes/Arcangel.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; position: relative; z-index: 2;">
-                                <img src="~/imagenes/JBalvin.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; right: 40px; top: 20px; z-index: 1;">
-                            </div>
-                            <div class="p-2" style="position: absolute; bottom: 10px; width: 100%; text-align: center;">
+                    <h4 class="fw-bold mb-4">Estaciones Populares</h4>
+                    <div class="d-flex flex-nowrap overflow-auto scrollbar-invisible gap-3">
+                        <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                            <img src="~/imagenes/Estaciones Populares/Don Omar.jpeg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                            <div class="p-2">
                                 <h6 class="fw-bold mb-0">YO y TÚ</h6>
-                                <p class="small text-secondary mb-0">Ovy On The Drums, Quevedo, Beéle</p>
+                                <p class="small text-secondary mb-0">Ovy On The Drums,Quevedo, Beéle</p>
                             </div>
                         </div>
 
-                        <div style="background-color: #b5b3ff; border-radius: 20px; width: 280px; height: 280px; position: relative; font-family: sans-serif; flex: 0 0 auto;">
-                            <img src="~/imagenes/Logo/Melodix.png" alt="Logo" style="position: absolute; top: 12px; left: 12px; width: 28px; height: 28px;">
-                            <span style="position: absolute; top: 12px; right: 12px; font-weight: bold; font-size: 14px;">RADIO</span>
-                            <div style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 100%; display: flex; align-items: center; justify-content: center;">
-                                <img src="~/imagenes/feid.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; left: 40px; top: 20px; z-index: 1;">
-                                <img src="~/imagenes/Arcangel.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; position: relative; z-index: 2;">
-                                <img src="~/imagenes/JBalvin.jpg" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; position: absolute; right: 40px; top: 20px; z-index: 1;">
-                            </div>
-                            <div class="p-2" style="position: absolute; bottom: 10px; width: 100%; text-align: center;">
+                         <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                            <img src="~/imagenes/Estaciones Populares/Aventura.jpeg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                            <div class="p-2">
                                 <h6 class="fw-bold mb-0">YO y TÚ</h6>
-                                <p class="small text-secondary mb-0">Ovy On The Drums, Quevedo, Beéle</p>
+                                <p class="small text-secondary mb-0">Ovy On The Drums,Quevedo, Beéle</p>
                             </div>
                         </div>
-					</div>
-				</div>
+                        <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                            <img src="~/imagenes/Estaciones Populares/Bad buniy.jpeg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                            <div class="p-2">
+                                <h6 class="fw-bold mb-0">YO y TÚ</h6>
+                                <p class="small text-secondary mb-0">Ovy On The Drums,Quevedo, Beéle</p>
+                            </div>
+                        </div>
+                        <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                            <img src="~/imagenes/Estaciones Populares/Danny Ocean.jpeg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                            <div class="p-2">
+                                <h6 class="fw-bold mb-0">YO y TÚ</h6>
+                                <p class="small text-secondary mb-0">Ovy On The Drums,Quevedo, Beéle</p>
+                            </div>
+                        </div>
+                        <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                            <img src="~/imagenes/Estaciones Populares/Beele.jpeg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                            <div class="p-2">
+                                <h6 class="fw-bold mb-0">YO y TÚ</h6>
+                                <p class="small text-secondary mb-0">Ovy On The Drums,Quevedo, Beéle</p>
+                            </div>
+                        </div>
+                        <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                            <img src="~/imagenes/Estaciones Populares/Jombriel.jpeg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                            <div class="p-2">
+                                <h6 class="fw-bold mb-0">YO y TÚ</h6>
+                                <p class="small text-secondary mb-0">Ovy On The Drums,Quevedo, Beéle</p>
+                            </div>
+                        </div>
+                        <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                            <img src="~/imagenes/Estaciones Populares/Mana.jpeg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                            <div class="p-2">
+                                <h6 class="fw-bold mb-0">YO y TÚ</h6>
+                                <p class="small text-secondary mb-0">Ovy On The Drums,Quevedo, Beéle</p>
+                            </div>
+                        </div>
+                        <div class="card bg-black text-white" style="width: 180px; min-width: 180px;">
+                            <img src="~/imagenes/Estaciones Populares/Feid.jpeg" class="card-img-top rounded-1" style="aspect-ratio: 1 / 1; object-fit: cover;" alt="Canción 1">
+                            <div class="p-2">
+                                <h6 class="fw-bold mb-0">YO y TÚ</h6>
+                                <p class="small text-secondary mb-0">Ovy On The Drums,Quevedo, Beéle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+
+               
 
             </div>
 
 
-        </div>
+		</div>
+        <div class="container-fluid px-0">
+			<div class="d-flex justify-content-between align-items-center p-3 rounded" style="background: linear-gradient(90deg, #9b00ba, #3b82f6); color: white;">
+				<div>
+					<h6 class="fw-bold mb-1">Muestra de Melodix</h6>
+					<p class="mb-0 small">Regístrate para acceder a canciones y podcasts ilimitados con algunos anuncios. No necesitas tarjeta de crédito.</p>
+				</div>
+				<a class="btn btn-light fw-bold rounded-pill px-3 py-2" asp-area="Identity" asp-page="/Account/Register">Regístrate gratis</a>
+
+			</div>
+		</div>
     </div>
 
 
