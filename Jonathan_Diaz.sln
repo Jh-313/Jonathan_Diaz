@@ -5,6 +5,10 @@ VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jonathan_Diaz", "WebApplication1\Jonathan_Diaz.csproj", "{4F1DD15E-7AF2-4A80-88A8-B07716C88F9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Melodix", "Melodix\Melodix.csproj", "{EBF84837-674E-4982-BD4C-62F60EEA4F22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Melodix.Api", "Melodix.Api\Melodix.Api.csproj", "{8EF558E9-F95F-4851-9753-6E126304CEB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{4F1DD15E-7AF2-4A80-88A8-B07716C88F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F1DD15E-7AF2-4A80-88A8-B07716C88F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F1DD15E-7AF2-4A80-88A8-B07716C88F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF84837-674E-4982-BD4C-62F60EEA4F22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF84837-674E-4982-BD4C-62F60EEA4F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF84837-674E-4982-BD4C-62F60EEA4F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF84837-674E-4982-BD4C-62F60EEA4F22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF558E9-F95F-4851-9753-6E126304CEB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF558E9-F95F-4851-9753-6E126304CEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF558E9-F95F-4851-9753-6E126304CEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF558E9-F95F-4851-9753-6E126304CEB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

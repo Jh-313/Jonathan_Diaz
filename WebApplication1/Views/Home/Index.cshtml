@@ -1,5 +1,6 @@
 ﻿@{
     Layout = null;
+
 }
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +22,7 @@
     <div class="d-flex flex-column min-vh-100">
 
         <!-- 🔹 TopBar Superior -->
-        <div class="topbar d-flex justify-content-between align-items-center p-3 bg-black text-white">
+        <div class ="topbar d-flex justify-content-between align-items-center p-3 bg-black text-white sticky-top" style="z-index: 1020; ">
            
             <div class="d-flex align-items-center gap-3">
                 <a href="#"><img src="~/imagenes/Logo/Melodix.png" alt="Melodix" style="width: 50px;"></a>
@@ -43,18 +44,19 @@
                 <a class="btn btn-light fw-bold rounded-pill px-4" asp-area="Identity" asp-page="/Account/Login">Iniciar sesión</a>
             </div>
         </div>
-
+         
+       @*  ---------------- *@
        
-        <div class="d-flex flex-grow-1">
+        <div class="d-flex" style="height: calc(100vh - 72px); overflow: hidden;">
 
-          
+            <!-- Sidebar fija -->
             <div class="sidebar bg-black text-white p-4 d-flex flex-column justify-content-between" style="width: 260px;">
                 <div>
                     <h5 class="fw-bold">Tu biblioteca</h5>
                     <button class="btn btn-outline-light btn-sm rounded-pill mt-3">Crear playlist</button>
 
                     <div class="mt-4">
-                        <p class="small text-muted">Busquemos algunos podcasts para seguir</p>
+                        <p class="small text-muted">Busquemos algunas músicas para seguir</p>
                     </div>
                 </div>
 
@@ -69,6 +71,9 @@
                     </button>
                 </div>
             </div>
+
+           @* contenedor de las canciones  *@
+
 
             <div class="main-content bg-dark text-white p-4 flex-grow-1 overflow-auto scrollbar-invisible">
                 <h4 class="fw-bold mb-4">Canciones del momento</h4>
@@ -282,16 +287,22 @@
 
 
 		</div>
-        <div class="container-fluid px-0">
-			<div class="d-flex justify-content-between align-items-center p-3 rounded" style="background: linear-gradient(90deg, #9b00ba, #3b82f6); color: white;">
-				<div>
-					<h6 class="fw-bold mb-1">Muestra de Melodix</h6>
-					<p class="mb-0 small">Regístrate para acceder a canciones y podcasts ilimitados con algunos anuncios. No necesitas tarjeta de crédito.</p>
-				</div>
-				<a class="btn btn-light fw-bold rounded-pill px-3 py-2" asp-area="Identity" asp-page="/Account/Register">Regístrate gratis</a>
+        <!-- 🔻 Banner fijo al fondo -->
+        @* Mostrar solo si el usuario NO ha iniciado sesión *@
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="container-fluid px-0" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1040;">
+                <div class="d-flex justify-content-between align-items-center p-3 rounded" style="background: linear-gradient(90deg, #9b00ba, #3b82f6); color: white;">
+                    <div>
+                        <h6 class="fw-bold mb-1">Muestra de Melodix</h6>
+                        <p class="mb-0 small">Regístrate para acceder a canciones y podcasts ilimitados con algunos anuncios. No necesitas tarjeta de crédito.</p>
+                    </div>
+                    <a class="btn btn-light fw-bold rounded-pill px-3 py-2" asp-area="Identity" asp-page="/Account/Register">Regístrate gratis</a>
+                </div>
+            </div>
+        }
 
-			</div>
-		</div>
+
     </div>
 
 

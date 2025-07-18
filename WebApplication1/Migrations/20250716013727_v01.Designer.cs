@@ -9,10 +9,10 @@ using WebApplication1.Data;
 
 #nullable disable
 
-namespace WebApplication1.Migrations
+namespace Jonathan_Diaz.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250702143512_v01")]
+    [Migration("20250716013727_v01")]
     partial class v01
     {
         /// <inheritdoc />
