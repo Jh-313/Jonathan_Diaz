@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Melodix.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250718193715_v01")]
+    [Migration("20250718224307_v01")]
     partial class v01
     {
         /// <inheritdoc />
@@ -92,8 +92,6 @@ namespace Melodix.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SubidoPorId");
-
                     b.ToTable("Canciones");
                 });
 
@@ -115,8 +113,6 @@ namespace Melodix.Api.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CancionId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Likes");
                 });
@@ -163,8 +159,6 @@ namespace Melodix.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UsuarioId");
-
                     b.ToTable("ListaReproducciones");
                 });
 
@@ -187,49 +181,7 @@ namespace Melodix.Api.Migrations
 
                     b.HasIndex("CancionId");
 
-                    b.HasIndex("UsuarioId");
-
                     b.ToTable("Reproducciones");
-                });
-
-            modelBuilder.Entity("Melodix.Usuario", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ContrasenaHash")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Correo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NombreUsuario")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Rol")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Suscripcion")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Usuarios");
-                });
-
-            modelBuilder.Entity("Melodix.Cancion", b =>
-                {
-                    b.HasOne("Melodix.Usuario", "SubidoPor")
-                        .WithMany("CancionesSubidas")
-                        .HasForeignKey("SubidoPorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("SubidoPor");
                 });
 
             modelBuilder.Entity("Melodix.Like", b =>
@@ -240,15 +192,7 @@ namespace Melodix.Api.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Melodix.Usuario", "Usuario")
-                        .WithMany("Likes")
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Cancion");
-
-                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Melodix.ListaCancion", b =>
@@ -270,17 +214,6 @@ namespace Melodix.Api.Migrations
                     b.Navigation("ListaReproduccion");
                 });
 
-            modelBuilder.Entity("Melodix.ListaReproduccion", b =>
-                {
-                    b.HasOne("Melodix.Usuario", "Usuario")
-                        .WithMany("Listas")
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Usuario");
-                });
-
             modelBuilder.Entity("Melodix.Reproduccion", b =>
                 {
                     b.HasOne("Melodix.Cancion", "Cancion")
@@ -289,15 +222,7 @@ namespace Melodix.Api.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Melodix.Usuario", "Usuario")
-                        .WithMany("Reproducciones")
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Cancion");
-
-                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Melodix.Cancion", b =>
@@ -312,17 +237,6 @@ namespace Melodix.Api.Migrations
             modelBuilder.Entity("Melodix.ListaReproduccion", b =>
                 {
                     b.Navigation("ListasCancion");
-                });
-
-            modelBuilder.Entity("Melodix.Usuario", b =>
-                {
-                    b.Navigation("CancionesSubidas");
-
-                    b.Navigation("Likes");
-
-                    b.Navigation("Listas");
-
-                    b.Navigation("Reproducciones");
                 });
 #pragma warning restore 612, 618
         }

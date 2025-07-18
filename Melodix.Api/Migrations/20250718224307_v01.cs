@@ -29,22 +29,6 @@ namespace Melodix.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Usuarios",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Correo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NombreUsuario = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ContrasenaHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Rol = table.Column<int>(type: "int", nullable: false),
-                    Suscripcion = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Usuarios", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Canciones",
                 columns: table => new
                 {
@@ -61,13 +45,7 @@ namespace Melodix.Api.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Canciones", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Canciones_Usuarios_SubidoPorId",
-                        column: x => x.SubidoPorId,
-                        principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                }); 
+                });
 
             migrationBuilder.CreateTable(
                 name: "ListaReproducciones",
@@ -81,12 +59,6 @@ namespace Melodix.Api.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ListaReproducciones", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ListaReproducciones_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -106,13 +78,7 @@ namespace Melodix.Api.Migrations
                         column: x => x.CancionId,
                         principalTable: "Canciones",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                    table.ForeignKey(
-                        name: "FK_Likes_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -132,13 +98,7 @@ namespace Melodix.Api.Migrations
                         column: x => x.CancionId,
                         principalTable: "Canciones",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                    table.ForeignKey(
-                        name: "FK_Reproducciones_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -158,29 +118,19 @@ namespace Melodix.Api.Migrations
                         column: x => x.CancionId,
                         principalTable: "Canciones",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ListaCanciones_ListaReproducciones_ListaReproduccionId",
                         column: x => x.ListaReproduccionId,
                         principalTable: "ListaReproducciones",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Canciones_SubidoPorId",
-                table: "Canciones",
-                column: "SubidoPorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Likes_CancionId",
                 table: "Likes",
                 column: "CancionId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Likes_UsuarioId",
-                table: "Likes",
-                column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ListaCanciones_CancionId",
@@ -193,19 +143,9 @@ namespace Melodix.Api.Migrations
                 column: "ListaReproduccionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ListaReproducciones_UsuarioId",
-                table: "ListaReproducciones",
-                column: "UsuarioId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Reproducciones_CancionId",
                 table: "Reproducciones",
                 column: "CancionId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Reproducciones_UsuarioId",
-                table: "Reproducciones",
-                column: "UsuarioId");
         }
 
         /// <inheritdoc />
@@ -228,9 +168,6 @@ namespace Melodix.Api.Migrations
 
             migrationBuilder.DropTable(
                 name: "Canciones");
-
-            migrationBuilder.DropTable(
-                name: "Usuarios");
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Melodix
 
         public int TotalLikes { get; set; }
         public int TotalReproducciones { get; set; } 
-        public Usuario? SubidoPor { get; set; }
+      
         public DateTime? FechaSubida { get; set; }
 
         public ICollection<Like>? Likes { get; set; }

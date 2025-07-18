@@ -16,7 +16,7 @@ namespace Melodix
 
         [ForeignKey("Usuario")]
         public Guid UsuarioId { get; set; }
-        public Usuario? Usuario { get; set; }
+      
 
         public DateTime? FechaCreacion { get; set; } = DateTime.UtcNow;
 

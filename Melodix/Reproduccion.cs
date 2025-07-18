@@ -20,7 +20,7 @@ namespace Melodix
         [ForeignKey("Cancion")]
         public Guid CancionId { get; set; }
         
-        public Usuario? Usuario { get; set; }
+       
         public Cancion? Cancion { get; set; }
         public DateTime? Fecha { get; set; }
     }

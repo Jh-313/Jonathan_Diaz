@@ -11,9 +11,6 @@ using Melodix;
             : base(options)
         {
         }
-
-        public DbSet<Melodix.Usuario> Usuarios { get; set; } = default!;
-
 public DbSet<Melodix.Cancion> Canciones { get; set; } = default!;
 
 public DbSet<Melodix.Anuncio> Anuncios { get; set; } = default!;
