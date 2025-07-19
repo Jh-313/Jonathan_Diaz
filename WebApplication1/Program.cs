@@ -1,4 +1,6 @@
+using Jonathan_Diaz.services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 
@@ -19,9 +21,13 @@ namespace WebApplication1
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            builder.Services.AddTransient<IEmailSender, EmailSender>();
 
             var app = builder.Build();
+           
 
+           
+            
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

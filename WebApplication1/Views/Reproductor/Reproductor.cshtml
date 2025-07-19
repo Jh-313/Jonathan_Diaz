@@ -1,0 +1,11 @@
+﻿@model Melodix.Cancion
+
+<div class="container mt-4 text-white">
+    <h3>@Model.Titulo</h3>
+    <p>@Model.Descripcion</p>
+
+    <div class="d-flex align-items-center">
+        <img src="@Model.UrlImagen" class="img-thumbnail me-3" style="width: 100px;" />
+        <audio controls src="@Model.UrlAudio" class="flex-grow-1"></audio>
+    </div>
+</div>
